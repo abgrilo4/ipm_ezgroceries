@@ -6,6 +6,7 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
+            android:icon="@drawable/baseline_more_vert_24"
             android:title="Escolher opção" />
         <item
             android:id="@+id/nav_share"
