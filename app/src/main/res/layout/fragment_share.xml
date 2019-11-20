@@ -29,7 +29,7 @@
         android:textSize="25sp"
         android:textColor="@color/cardview_dark_background"
 
-        android:text="Introduza Os Seus Novos Dados"/>
+        android:text="Introduza os seus novos dados"/>
 
     <EditText
         android:id="@+id/email"
