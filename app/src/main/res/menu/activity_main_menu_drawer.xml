@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/baseline_more_vert_24"
+            android:title="Escolher opção" />
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/baseline_person_24"
+            android:title="Alterar Perfil" />
+
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/baseline_favorite_24"
+            android:title="Os Meus Favoritos" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/baseline_save_24"
+            android:title="Listas Guardadas" />
+        <item
+            android:id="@+id/nav_tools"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Definições" />
+    </group>
+
+    <item android:title="Other Functionalities">
+        <menu>
+
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/baseline_exit_to_app_24"
+                android:title="Logout" />
+        </menu>
+    </item>
+
+</menu>
