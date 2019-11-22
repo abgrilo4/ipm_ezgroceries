@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "546208920997",
+    "firebase_url": "https://ezgroceries-e367f.firebaseio.com",
+    "project_id": "ezgroceries-e367f",
+    "storage_bucket": "ezgroceries-e367f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:546208920997:android:03365cd3c3f2f294d3244c",
+        "android_client_info": {
+          "package_name": "com.example.ezgroceries"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "546208920997-ac34481ohostdls34d1qltestrsrv3dg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApeWQrfMIGXbBSdsgGRtmKGayYNTXy87w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "546208920997-ac34481ohostdls34d1qltestrsrv3dg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

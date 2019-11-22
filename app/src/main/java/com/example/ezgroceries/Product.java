@@ -2,18 +2,18 @@ package com.example.ezgroceries;
 
 public class Product {
     private String name;
-    private Float price;
+    private double price;
     private int number;
     boolean checkbox;
 
-    public  Product(String name, int number, Float price){
+    public  Product(String name, int number, double price){
         this.name = name;
         this.price = price;
         this.number = number;
         this.checkbox = false;
     }
 
-    public Float getPrice() {
+    public double getPrice() {
         return price;
     }
 

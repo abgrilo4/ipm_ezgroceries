@@ -20,8 +20,8 @@ public class Produto {
         return nome;
     }
 
-    public String melhorPreco() {
-        return String.valueOf(Math.min(preco1,Math.min(preco2,preco3)) + "€");
+    public double melhorPreco() {
+        return Math.min(preco1,Math.min(preco2,preco3));
     }
 
     public double preco1() {

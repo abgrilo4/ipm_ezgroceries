@@ -74,7 +74,7 @@ public class ProductAdapter extends BaseAdapter {
                 TextView price = (TextView) convertView.findViewById(R.id.rowPrice);
                 name.setText(((Product)list.get(position)).getName());
                 number.setText(String.valueOf(((Product)list.get(position)).getNumber()));
-                price.setText(Float.toString(((Product)list.get(position)).getPrice()) + "€");
+                price.setText(Double.toString(((Product)list.get(position)).getPrice()) + "€");
                 break;
             case HEADER:
                 TextView nome = (TextView) convertView.findViewById(R.id.headerName);

@@ -24,6 +24,8 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -33,17 +35,20 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainMenu extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-
+    private DatabaseReference reff;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        reff = FirebaseDatabase.getInstance().getReference().child("Product");
+        reff.removeValue();
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -59,7 +64,7 @@ public class MainMenu extends AppCompatActivity {
         toolbar.setTitle("");
         NavigationUI.setupWithNavController(navigationView, navController);
 
-
+        Toast.makeText(this, "Success", Toast.LENGTH_LONG).show();
 
     }
 
