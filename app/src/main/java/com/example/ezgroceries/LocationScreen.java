@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.ezgroceries.ui.Produtos.TodosScreen;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -56,7 +57,7 @@ public class LocationScreen extends FragmentActivity implements OnMapReadyCallba
         subLocBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LocationScreen.this, LocationScreen.class);
+                Intent intent = new Intent(LocationScreen.this, TodosScreen.class);
                 startActivity(intent);
             }
         });

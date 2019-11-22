@@ -26,14 +26,14 @@
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            app:srcCompat="@null" />
+            app:srcCompat="@android:color/holo_orange_dark" />
 
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            app:srcCompat="@null" />
+            app:srcCompat="@android:color/holo_blue_dark" />
 
     </LinearLayout>
 
@@ -64,7 +64,7 @@
                 android:layout_gravity="center"
                 android:layout_weight="0.6"
                 android:background="@null"
-                android:foreground="@drawable/carrinho"
+                android:foreground="@drawable/carrinho_branco"
                 android:scaleType="fitXY"
                 android:textColor="@color/cardview_light_background" />
 
@@ -74,6 +74,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.2"
                 app:srcCompat="@null" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -107,7 +108,32 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.2"
                 app:srcCompat="@null" />
+
         </LinearLayout>
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:fontFamily="sans-serif-medium"
+        android:text="Comprar Produtos"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteY="258dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:fontFamily="sans-serif-medium"
+        android:text="Definir Localização"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteY="577dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
