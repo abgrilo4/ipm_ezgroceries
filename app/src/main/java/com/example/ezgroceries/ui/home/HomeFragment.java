@@ -14,10 +14,16 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+<<<<<<< HEAD
 import com.example.ezgroceries.HomeScreen;
 import com.example.ezgroceries.LocationScreen;
 import com.example.ezgroceries.MainMenu;
 import com.example.ezgroceries.R;
+=======
+import com.example.ezgroceries.LocationScreen;
+import com.example.ezgroceries.R;
+import com.example.ezgroceries.ui.Produtos.TodosScreen;
+>>>>>>> origin/joao
 
 public class HomeFragment extends Fragment {
 
@@ -44,6 +50,19 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
+<<<<<<< HEAD
+=======
+
+        Button prodBtn = (Button) root.findViewById(R.id.produtos);
+        prodBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), TodosScreen.class);
+                startActivity(intent);
+            }
+        });
+
+>>>>>>> origin/joao
         return root;
     }
 }

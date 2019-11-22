@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.ezgroceries.ui.login.LoginActivity;
+<<<<<<< HEAD
 import com.example.ezgroceries.ui.slideshow.DetalisSlideshowFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -14,6 +15,13 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+=======
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+
+import android.view.View;
+
+>>>>>>> origin/joao
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -63,11 +71,15 @@ public class MainMenu extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_menu, menu);
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/joao
         return true;
     }
 
     @Override
+<<<<<<< HEAD
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case  R.id.CheckCart:
@@ -80,6 +92,8 @@ public class MainMenu extends AppCompatActivity {
     }
 
     @Override
+=======
+>>>>>>> origin/joao
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
