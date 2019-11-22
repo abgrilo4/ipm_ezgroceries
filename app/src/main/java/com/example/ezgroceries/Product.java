@@ -29,7 +29,11 @@ public class Product {
         return checkbox;
     }
 
-    public void setCheckbox(boolean checkbox) {
-        this.checkbox = checkbox;
+    public void setCheckbox() {
+
+        if(checkbox == false)
+            checkbox = true;
+        else
+            checkbox = false;
     }
 }

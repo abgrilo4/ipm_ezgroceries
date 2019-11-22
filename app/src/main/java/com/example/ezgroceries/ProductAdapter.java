@@ -55,7 +55,7 @@ public class ProductAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         if(convertView == null){
             switch (getItemViewType(position)){
                 case PRODUCT:
@@ -84,6 +84,18 @@ public class ProductAdapter extends BaseAdapter {
                 quantidade.setText("Quantidade");
                 preco.setText("Preço");
                 break;
+        }
+
+        if(getItemViewType(position) == PRODUCT){
+            CheckBox checkBox = convertView.findViewById(R.id.checkBox2);
+
+            checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    ((Product)list.get(position)).setCheckbox();
+                }
+            });
         }
 
         return convertView;

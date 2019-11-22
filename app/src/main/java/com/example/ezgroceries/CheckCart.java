@@ -43,7 +43,22 @@ public class CheckCart extends AppCompatActivity {
         removeItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listaPlaceholder.remove(1);
+
+                ArrayList<Object> toRemove = new ArrayList<>();
+
+                for (Object o: listaPlaceholder) {
+                    if(o instanceof Product){
+                        if(((Product) o).isCheckbox())
+                            toRemove.add(o);
+
+                    }
+                }
+
+                for (Object p: toRemove) {
+                    listaPlaceholder.remove(p);
+
+                }
+
                 listView.setAdapter(adapter);
             }
         });
