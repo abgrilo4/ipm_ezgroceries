@@ -26,9 +26,7 @@
     <string name="title_activity_main4">Main4Activity</string>
     <string name="title_activity_main_menu">MainMenu</string>
     <string name="title_activity_location_screen">LocationScreen</string>
-<<<<<<< HEAD
     <string name="locSubButtonText">Avançar</string>
-=======
     <string name="title_activity_frescos_screen">FrescosScreen</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"

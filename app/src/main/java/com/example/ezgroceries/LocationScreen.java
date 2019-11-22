@@ -1,6 +1,5 @@
 package com.example.ezgroceries;
 
-<<<<<<< HEAD
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
@@ -15,18 +14,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-=======
-import androidx.fragment.app.FragmentActivity;
-
-import android.os.Bundle;
->>>>>>> origin/joao
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-<<<<<<< HEAD
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -37,13 +30,6 @@ public class LocationScreen extends FragmentActivity implements OnMapReadyCallba
     private float zoomLvl = 17.0f;
     private FloatingActionButton currLocBtn;
     LocationManager locationManager;
-=======
-import com.google.android.gms.maps.model.MarkerOptions;
-
-public class LocationScreen extends FragmentActivity implements OnMapReadyCallback {
-
-    private GoogleMap mMap;
->>>>>>> origin/joao
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +39,6 @@ public class LocationScreen extends FragmentActivity implements OnMapReadyCallba
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-<<<<<<< HEAD
 
         CheckPermission();
         currLocBtn = findViewById(R.id.currLocBtn);
@@ -96,8 +81,6 @@ public class LocationScreen extends FragmentActivity implements OnMapReadyCallba
         if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION}, 101);
         }
-=======
->>>>>>> origin/joao
     }
 
 
@@ -113,7 +96,6 @@ public class LocationScreen extends FragmentActivity implements OnMapReadyCallba
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-<<<<<<< HEAD
         LatLng currLoc = new LatLng(39.616205, -7.988183);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currLoc, zoomLvl-10.0f));
         mMap.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
@@ -152,12 +134,5 @@ public class LocationScreen extends FragmentActivity implements OnMapReadyCallba
     @Override
     public void onProviderDisabled(String provider) {
         Toast.makeText(LocationScreen.this, "Please Enable GPS and Internet", Toast.LENGTH_SHORT).show();
-=======
-
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
->>>>>>> origin/joao
     }
 }
