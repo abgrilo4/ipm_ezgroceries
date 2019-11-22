@@ -3,35 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".CheckCart">
 
     <Button
-        android:id="@+id/CheckButton"
+        android:id="@+id/RemoverItem"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Ver elementos da lista"
-        app:layout_constraintBottom_toTopOf="@id/RemoveButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        android:text="Remover item"
+        app:layout_constraintBottom_toTopOf="@+id/FinalizarCompra"
+        app:layout_constraintEnd_toEndOf="@id/FinalizarCompra"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/RemoveButton"
-        android:layout_width="0dp"
+        android:id="@+id/FinalizarCompra"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Remover lista"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:text="Finalizar compra"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <ListView
-        android:id="@+id/ListasFavoritas"
+        android:id="@+id/ItemsNoCarrinho"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:choiceMode="singleChoice"
-        app:layout_constraintBottom_toTopOf="@+id/CheckButton"
+        app:layout_constraintBottom_toTopOf="@id/RemoverItem"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
