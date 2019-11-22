@@ -52,7 +52,7 @@
                 android:elevation="0dp"
                 android:text="@string/locSubButtonText"
                 android:textAllCaps="true"
-                android:textStyle="bold" />
+                android:textColor="@color/design_default_color_primary_dark" />
         </RelativeLayout>
 
     </FrameLayout>
