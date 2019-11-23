@@ -14,6 +14,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -34,6 +35,7 @@ public class LocationScreen extends AppCompatActivity implements OnMapReadyCallb
     private float zoomLvl = 17.0f;
     private FloatingActionButton currLocBtn;
     LocationManager locationManager;
+    private MarkerOptions currMarker = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,8 +69,15 @@ public class LocationScreen extends AppCompatActivity implements OnMapReadyCallb
         subLocBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LocationScreen.this, TodosScreen.class);
-                startActivity(intent);
+                if (currMarker == null) {
+
+                    Toast toast = Toast.makeText(getApplicationContext(), "Por favor defina uma localização.", Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.TOP, 0, 125);
+                    toast.show();
+                } else {
+                    Intent intent = new Intent(LocationScreen.this, TodosScreen.class);
+                    startActivity(intent);
+                }
             }
         });
 
@@ -107,13 +116,15 @@ public class LocationScreen extends AppCompatActivity implements OnMapReadyCallb
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        LatLng currLoc = new LatLng(39.616205, -7.988183);
+        final LatLng currLoc = new LatLng(39.616205, -7.988183);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currLoc, zoomLvl-10.0f));
         mMap.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
             @Override
             public void onMapLongClick(LatLng latLng) {
+                currMarker = new MarkerOptions().position(latLng);
                 mMap.clear();
-                mMap.addMarker(new MarkerOptions().position(latLng));
+                mMap.addMarker(currMarker);
+
                 //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, mMap.getCameraPosition().zoom));
             }
         });
@@ -121,13 +132,11 @@ public class LocationScreen extends AppCompatActivity implements OnMapReadyCallb
 
     @Override
     public void onLocationChanged(Location location) {
-        String tvLongi = String.valueOf(location.getLongitude());
-        String tvLati = String.valueOf(location.getLatitude());
-
         // Add a marker in the current location and move the camera
         LatLng currLoc = new LatLng(location.getLatitude(), location.getLongitude());
         mMap.clear();
-        mMap.addMarker(new MarkerOptions().position(currLoc).title("You're Here"));
+        currMarker = new MarkerOptions().position(currLoc).title("You're Here");
+        mMap.addMarker(currMarker);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currLoc, zoomLvl));
     }
 
