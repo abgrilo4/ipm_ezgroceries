@@ -7,9 +7,6 @@
     app:cardElevation="3dp"
     app:cardUseCompatPadding="true"
     >
-
-
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -56,12 +53,10 @@
             android:id="@+id/adic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Adicionar"
-            android:textColor="@color/colorBackground"
+            android:layout_alignParentEnd="true"
             android:layout_marginTop="50dp"
-            android:layout_marginLeft="270dp"
-
-            />
+            android:layout_marginEnd="4dp"
+            android:text="Adicionar" />
 
     </RelativeLayout>
 

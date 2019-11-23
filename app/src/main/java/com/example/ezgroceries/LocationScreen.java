@@ -1,5 +1,8 @@
 package com.example.ezgroceries;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
@@ -15,6 +18,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.ezgroceries.ui.Produtos.TodosScreen;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -24,7 +28,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class LocationScreen extends FragmentActivity implements OnMapReadyCallback, LocationListener {
+public class LocationScreen extends AppCompatActivity implements OnMapReadyCallback, LocationListener {
 
     private GoogleMap mMap;
     private float zoomLvl = 17.0f;
@@ -39,6 +43,13 @@ public class LocationScreen extends FragmentActivity implements OnMapReadyCallba
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar( myToolbar);
+        // Get a support ActionBar corresponding to this toolbar
+        ActionBar ab = getSupportActionBar();
+        ab.setTitle("Localização");
+        ab.setDisplayHomeAsUpEnabled(true);
 
         CheckPermission();
         currLocBtn = findViewById(R.id.currLocBtn);
@@ -56,7 +67,7 @@ public class LocationScreen extends FragmentActivity implements OnMapReadyCallba
         subLocBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LocationScreen.this, LocationScreen.class);
+                Intent intent = new Intent(LocationScreen.this, TodosScreen.class);
                 startActivity(intent);
             }
         });

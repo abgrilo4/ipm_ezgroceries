@@ -16,11 +16,14 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/ezgroceries"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
 
-        <activity android:name=".CheckCart"></activity>
+        android:theme="@style/AppTheme">
+        <activity android:name=".FinalScreenActivity"
+            android:parentActivityName="com.example.ezgroceries.ui.Produtos.TodosScreen" ></activity>
+        <activity android:name=".CheckCart" />
+
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />

@@ -1,17 +1,8 @@
 package com.example.ezgroceries.ui.login;
 
 import android.app.Activity;
-
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
-
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-import androidx.annotation.StringRes;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
@@ -22,6 +13,12 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 
 import com.example.ezgroceries.MainMenu;
 import com.example.ezgroceries.R;
@@ -49,6 +46,9 @@ public class LoginActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
             Intent intent = new Intent(LoginActivity.this, MainMenu.class);
+            intent.putExtra("user", "Guest User");
+            intent.putExtra("email", "No email available");
+
             startActivity(intent);
         }});
 
@@ -131,11 +131,13 @@ public class LoginActivity extends AppCompatActivity{
     }
 
     private void updateUiWithUser(LoggedInUserView model) {
-        String welcome = getString(R.string.welcome) + model.getDisplayName();
+        String welcome = String.format(getString(R.string.welcome), model.getDisplayName());
 
 
         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
         Intent intent = new Intent(LoginActivity.this, MainMenu.class);
+        intent.putExtra("user", ((EditText)findViewById(R.id.username)).getText().toString());
+        intent.putExtra("email", ((EditText)findViewById(R.id.email)).getText().toString());
         startActivity(intent);
     }
 
