@@ -7,13 +7,12 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.SparseBooleanArray;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Adapter;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+
+import com.example.ezgroceries.ui.Produtos.Produto;
 
 import java.util.ArrayList;
 
@@ -29,14 +28,23 @@ public class CheckCart extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_cart);
 
+
         listaPlaceholder = new ArrayList<>();
+
         listaPlaceholder.add(new String());
+        /*
         listaPlaceholder.add(new Product("Apple",2 , 1.0f));
         listaPlaceholder.add(new Product("Apple",2 , 2.0f));
         listaPlaceholder.add(new Product("Apple",2 , 3.0f));
         listaPlaceholder.add(new Product("Apple",2 , 4.0f));
         listaPlaceholder.add(new Product("Apple",2 , 5.0f));
         listaPlaceholder.add(new Product("Apple",2 , 6.0f));
+
+         */
+
+        ArrayList<Produto> listaTeste = new ArrayList<>();
+        listaTeste = ((AppClass)this.getApplication()).getCarrinho();
+
 
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
