@@ -32,12 +32,23 @@ public class DetalisSlideshowFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         ArrayList<String> list = new ArrayList<>();
-        list.add("cenas");
-        list.add("mais cenas");
-        list.add("ainda mais cenas");
+        list.add("Cenouras");
+        list.add("Farinha");
         map.put(0, list);
+        list = new ArrayList<>();
+        list.add("Pão");
+        list.add("Alho");
+        list.add("Sal");
         map.put(1, list);
+        list = new ArrayList<>();
+        list.add("Frango");
+        list.add("Caril em pó");
+        list.add("Arroz");
         map.put(2, list);
+        list = new ArrayList<>();
+        list.add("Frango");
+        list.add("Arroz");
+        list.add("Cebola");
         map.put(3, list);
 
         View view = inflater.inflate(R.layout.fragment_slideshow_details, container, false);
