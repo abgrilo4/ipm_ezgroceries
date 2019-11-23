@@ -1,27 +1,51 @@
-<resources>
+<?xml version="1.0"?>
+
+    <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorBackground</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:fontFamily">@font/montserrat</item>
-        <item name="fontFamily">@font/montserrat</item> <!-- target android sdk versions < 26 and > 14 if theme other than AppCompat -->
-    </style>
 
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
 
-    <style name="AppTheme.ActionBar">
-        <item name="windowActionBar">true</item>
-        <item name="windowNoTitle">false</item>
-    </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style parent="Theme.AppCompat.Light.NoActionBar" name="AppTheme">
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <!-- Customize your theme here. -->
+
+
+    <item name="colorPrimary">@color/colorBackground</item>
+
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+
+    <item name="colorAccent">@color/colorAccent</item>
+
+    <item name="android:fontFamily">@font/montserrat</item>
+
+    <item name="fontFamily">@font/montserrat</item>
+
+    <!-- target android sdk versions < 26 and > 14 if theme other than AppCompat -->
+
+
+</style>
+
+
+    -<style name="AppTheme.NoActionBar">
+
+    <item name="windowActionBar">false</item>
+
+    <item name="windowNoTitle">true</item>
+
+</style>
+
+
+    -<style name="AppTheme.ActionBar">
+
+    <item name="windowActionBar">true</item>
+
+    <item name="windowNoTitle">false</item>
+
+</style>
+
+    <style parent="ThemeOverlay.AppCompat.Dark.ActionBar" name="AppTheme.AppBarOverlay"/>
+
+    <style parent="ThemeOverlay.AppCompat.Light" name="AppTheme.PopupOverlay"/>
 
 </resources>
