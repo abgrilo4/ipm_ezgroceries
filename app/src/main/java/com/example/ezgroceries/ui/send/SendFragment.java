@@ -18,6 +18,7 @@ import com.example.ezgroceries.HomeScreen;
 
 import com.example.ezgroceries.MainMenu;
 import com.example.ezgroceries.R;
+import com.example.ezgroceries.ui.login.LoginActivity;
 
 public class SendFragment extends Fragment {
 
@@ -40,7 +41,7 @@ public class SendFragment extends Fragment {
         yesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), HomeScreen.class);
+                Intent intent = new Intent(getActivity(), LoginActivity.class);
                 startActivity(intent);
             }
         });

@@ -4,7 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.ezgroceries.ui.Produtos.TodosScreen;
 import com.example.ezgroceries.ui.login.LoginActivity;
+import com.example.ezgroceries.ui.send.SendFragment;
 import com.example.ezgroceries.ui.slideshow.DetalisSlideshowFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -17,6 +19,7 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -66,23 +69,6 @@ public class MainMenu extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         toolbar.setTitle("");
         NavigationUI.setupWithNavController(navigationView, navController);
-        //Get user's name and email
-        /*if (savedInstanceState == null) {
-            Bundle extras = getIntent().getExtras();
-            if(extras == null) {
-                username = ((TextView) findViewById(R.id.sliderUsername)).getText().toString();
-                email = ((TextView) findViewById(R.id.sliderEmail)).getText().toString();
-
-            } else {
-                username = extras.getString("user");
-                email = extras.getString("email");
-            }
-        } else {
-            username= (String) savedInstanceState.getSerializable("user");
-            email= (String) savedInstanceState.getSerializable("email");
-        }
-        ((AppClass)getApplication()).setGlobalVariable("user", username);
-        ((AppClass)getApplication()).setGlobalVariable("email", email);*/
     }
 
     @Override
@@ -115,5 +101,22 @@ public class MainMenu extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    @Override
+    public void onBackPressed() {
+        FragmentManager fragmentManager=getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        Fragment fragment = fragmentManager.findFragmentById(R.id.nav_host_fragment);
+        if(fragment!=null){
+            Log.i("TAG","A substituir");
+            fragmentTransaction.remove(fragment);
+            fragmentTransaction.replace(R.id.nav_host_fragment,new SendFragment());
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
+        }else{
+            super.onBackPressed();
+        }
+
     }
 }
