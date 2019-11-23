@@ -21,7 +21,7 @@
 
         android:theme="@style/AppTheme">
         <activity android:name=".FinalScreenActivity"
-            android:parentActivityName="com.example.ezgroceries.ui.Produtos.TodosScreen" >></activity>
+            android:parentActivityName="com.example.ezgroceries.ui.Produtos.TodosScreen" ></activity>
         <activity android:name=".CheckCart" />
 
         <uses-library
