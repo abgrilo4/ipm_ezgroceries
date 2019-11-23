@@ -5,12 +5,15 @@ import android.app.Application;
 import com.example.ezgroceries.ui.Produtos.Produto;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class AppClass  extends Application {
     private String globalUsername = "Guest User";
     private String globalEmail = "No email available";
     private ArrayList<Produto> carrinho = new ArrayList<>();
     private ArrayList<Produto> favoritos = new ArrayList<>();
+    private HashMap<Produto, Integer> quantidade = new HashMap<>();
 
     public ArrayList<Produto> getCarrinho() {
         return carrinho;
@@ -24,14 +27,43 @@ public class AppClass  extends Application {
         this.carrinho = carrinho;
     }
 
+    public Produto allReadyInChart(Produto produto){
+        for (Produto p: carrinho
+             ) {
+            if(produto.nome().equals(p.nome()))
+                return p;
+        }
+        return null;
+    }
+
     public ArrayList<Produto> addProdutoFavoritos(Produto produto){
         favoritos.add(produto);
         return  favoritos;
     }
 
     public ArrayList<Produto> addProdutoCarrinho(Produto produto){
-        carrinho.add(produto);
+        Produto p = allReadyInChart(produto);
+
+        if(p != null){
+            int i = quantidade.get(p);
+            quantidade.remove(p);
+            quantidade.put(p, i + 1);
+        }else{
+            quantidade.put(produto, 1);
+            carrinho.add(produto);
+        }
         return  carrinho;
+    }
+
+    public int getQuantity(Produto produto){
+
+        for (Produto p: quantidade.keySet()
+             ) {
+            if(p.nome().equals(produto.nome()))
+                return quantidade.get(p);
+        }
+
+        return 0;
     }
 
     public ArrayList<Produto> removeProdutoCarrinho(Produto produto){

@@ -7,9 +7,10 @@
 
     <TextView
         android:id="@+id/rowName"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="TextView"
+        android:textAlignment="center"
         android:textSize="20dp"
         app:layout_constraintEnd_toStartOf="@+id/rowNumber"
         app:layout_constraintStart_toStartOf="parent"
@@ -17,9 +18,10 @@
 
     <TextView
         android:id="@+id/rowNumber"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="TextView"
+        android:textAlignment="center"
         android:textSize="20dp"
         app:layout_constraintEnd_toStartOf="@+id/rowPrice"
         app:layout_constraintStart_toEndOf="@+id/rowName"
@@ -27,10 +29,11 @@
 
     <TextView
         android:id="@+id/rowPrice"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="50dp"
         android:text="TextView"
+        android:textAlignment="center"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/rowNumber"

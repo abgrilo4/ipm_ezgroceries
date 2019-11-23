@@ -7,13 +7,12 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.SparseBooleanArray;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Adapter;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+
+import com.example.ezgroceries.ui.Produtos.Produto;
 
 import java.util.ArrayList;
 
@@ -29,14 +28,31 @@ public class CheckCart extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_cart);
 
+
         listaPlaceholder = new ArrayList<>();
+
         listaPlaceholder.add(new String());
+        /*
         listaPlaceholder.add(new Product("Apple",2 , 1.0f));
         listaPlaceholder.add(new Product("Apple",2 , 2.0f));
         listaPlaceholder.add(new Product("Apple",2 , 3.0f));
         listaPlaceholder.add(new Product("Apple",2 , 4.0f));
         listaPlaceholder.add(new Product("Apple",2 , 5.0f));
         listaPlaceholder.add(new Product("Apple",2 , 6.0f));
+
+         */
+
+        ArrayList<Produto> listaTeste = new ArrayList<>();
+        ((AppClass)this.getApplication()).addProdutoCarrinho(new Produto("Fiambre Perna Extra Fatias Nobre", 1.99, 1.99, 1.99, R.drawable.fiambre_perna_extra_fatias));
+        ((AppClass)this.getApplication()).addProdutoCarrinho(new Produto("Fiambre Perna Extra Fatias Nobre", 1.99, 1.99, 1.99, R.drawable.fiambre_perna_extra_fatias));
+        ((AppClass)this.getApplication()).addProdutoCarrinho(new Produto("Fiambre Perna Extra Fatias Nobre", 1.99, 1.99, 1.99, R.drawable.fiambre_perna_extra_fatias));
+        ((AppClass)this.getApplication()).addProdutoCarrinho(new Produto("Fiambre Perna Extra ", 1.99, 1.99, 1.99, R.drawable.fiambre_perna_extra_fatias));
+
+        listaTeste = ((AppClass)this.getApplication()).getCarrinho();
+
+        for (Produto p: listaTeste) {
+            listaPlaceholder.add(new Product(p.nome(),  ((AppClass)this.getApplication()).getQuantity(p), p.melhorPrecoFloat(), p));
+        }
 
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
@@ -67,7 +83,9 @@ public class CheckCart extends AppCompatActivity {
                 }
 
                 for (Object p: toRemove) {
+                    Product product = (Product) p;
                     listaPlaceholder.remove(p);
+                    ((AppClass)CheckCart.this.getApplication()).removeProdutoCarrinho(product.getProduto());
                 }
 
                 listView.setAdapter(adapter);
