@@ -1,5 +1,6 @@
 package com.example.ezgroceries.ui.Produtos;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.ezgroceries.AppClass;
 import com.example.ezgroceries.R;
 
 import java.util.ArrayList;
@@ -32,11 +34,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyHolder myHolder, int i) {
+    public void onBindViewHolder(@NonNull MyHolder myHolder, final int i) {
 
         myHolder.mTitle.setText(models.get(i).nome());
         myHolder.mPreco.setText(models.get(i).melhorPreco());
         myHolder.mImageView.setImageResource(models.get(i).idImg());
+        ((MyHolder)myHolder).addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((AppClass)((Activity)c).getApplication()).addProdutoCarrinho(models.get(i));
+            }
+        });
 
     }
 

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,7 +13,9 @@ import com.example.ezgroceries.R;
 public class MyHolder extends RecyclerView.ViewHolder {
 
     ImageView mImageView;
+    ImageView favView;
     TextView mTitle, mPreco;
+    Button addBtn;
 
    public MyHolder(@NonNull View itemView) {
        super(itemView);
@@ -20,5 +23,7 @@ public class MyHolder extends RecyclerView.ViewHolder {
        this.mImageView = itemView.findViewById(R.id.image);
        this.mTitle = itemView.findViewById(R.id.title);
        this.mPreco = itemView.findViewById(R.id.preco);
+       this.favView = itemView.findViewById(R.id.fav);
+       this.addBtn = itemView.findViewById(R.id.adic);
    }
 }
