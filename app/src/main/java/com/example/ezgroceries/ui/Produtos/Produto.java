@@ -20,6 +20,10 @@ public class Produto {
         return nome;
     }
 
+    public float melhorPrecoFloat() {
+        return (float)Math.min(preco1,Math.min(preco2,preco3));
+    }
+
     public String melhorPreco() {
         return String.valueOf(Math.min(preco1,Math.min(preco2,preco3)) + "€");
     }

@@ -43,8 +43,13 @@ public class CheckCart extends AppCompatActivity {
          */
 
         ArrayList<Produto> listaTeste = new ArrayList<>();
+        //((AppClass)this.getApplication()).addProdutoCarrinho(new Produto("Fiambre Perna Extra Fatias Nobre", 1.99, 1.99, 1.99, R.drawable.fiambre_perna_extra_fatias));
+        //((AppClass)this.getApplication()).addProdutoCarrinho(new Produto("Fiambre Perna ", 1.99, 1.99, 1.99, R.drawable.fiambre_perna_extra_fatias));
         listaTeste = ((AppClass)this.getApplication()).getCarrinho();
 
+        for (Produto p: listaTeste) {
+            listaPlaceholder.add(new Product(p.nome(), 1, p.melhorPrecoFloat(), p));
+        }
 
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
@@ -75,7 +80,9 @@ public class CheckCart extends AppCompatActivity {
                 }
 
                 for (Object p: toRemove) {
+                    Product product = (Product) p;
                     listaPlaceholder.remove(p);
+                    ((AppClass)CheckCart.this.getApplication()).removeProdutoCarrinho(product.getProduto());
                 }
 
                 listView.setAdapter(adapter);
