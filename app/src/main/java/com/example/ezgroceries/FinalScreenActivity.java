@@ -2,8 +2,12 @@ package com.example.ezgroceries;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -22,6 +26,8 @@ public class FinalScreenActivity extends AppCompatActivity {
     AdapterFinal myAdapter;
     ArrayList<Produto> carrinho;
     ArrayList<Integer> qtdd;
+    TextView valView;
+    RadioGroup radGrup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +49,39 @@ public class FinalScreenActivity extends AppCompatActivity {
         myAdapter = new AdapterFinal(this, carrinho, qtdd);
         mRecyclerView.setAdapter(myAdapter);
 
+        radGrup = findViewById(R.id.radGrup);
+
+        valView = findViewById(R.id.valTextView);
+        valView.setText("Total: " + String.valueOf(calcPrice()) + " €");
+        radGrup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                valView.setText("Total: " + String.valueOf(calcPrice()) + " €");
+            }
+        });
+
+    }
+
+    private double calcPrice() {
+        double price = 0;
+        if (radGrup.getCheckedRadioButtonId() == R.id.radioButtonCheap) {
+            for(Produto p: carrinho) {
+                price += p.melhorPreco2();
+            }
+        } else if (radGrup.getCheckedRadioButtonId() == R.id.radioButtonContinente) {
+            for(Produto p: carrinho) {
+                price += p.preco1();
+            }
+        } else if (radGrup.getCheckedRadioButtonId() == R.id.radioButtonJumbo) {
+            for(Produto p: carrinho) {
+                price += p.preco2();
+            }
+        } else if (radGrup.getCheckedRadioButtonId() == R.id.radioButtonPingo) {
+            for(Produto p: carrinho) {
+                price += p.preco3();
+            }
+        }
+        return price;
     }
 
     @Override

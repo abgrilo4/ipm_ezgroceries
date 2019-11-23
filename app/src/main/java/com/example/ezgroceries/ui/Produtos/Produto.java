@@ -28,6 +28,10 @@ public class Produto {
         return String.valueOf(Math.min(preco1,Math.min(preco2,preco3)) + "€");
     }
 
+    public double melhorPreco2() {
+        return Math.min(preco1,Math.min(preco2,preco3));
+    }
+
     public double preco1() {
         return preco1;
     }
