@@ -49,6 +49,9 @@ public class LoginActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
             Intent intent = new Intent(LoginActivity.this, MainMenu.class);
+            intent.putExtra("user", "Guest User");
+            intent.putExtra("email", "No email available");
+
             startActivity(intent);
         }});
 
@@ -131,11 +134,13 @@ public class LoginActivity extends AppCompatActivity{
     }
 
     private void updateUiWithUser(LoggedInUserView model) {
-        String welcome = getString(R.string.welcome) + model.getDisplayName();
+        String welcome = String.format(getString(R.string.welcome), model.getDisplayName());
 
 
         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
         Intent intent = new Intent(LoginActivity.this, MainMenu.class);
+        intent.putExtra("user", ((EditText)findViewById(R.id.username)).getText().toString());
+        intent.putExtra("email", ((EditText)findViewById(R.id.email)).getText().toString());
         startActivity(intent);
     }
 

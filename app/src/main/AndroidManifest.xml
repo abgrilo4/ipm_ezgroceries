@@ -18,13 +18,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
 
-        <activity android:name=".CheckCart"></activity>
+        android:theme="@style/AppTheme">
+        <activity android:name=".FinalScreenActivity"
+            android:parentActivityName="com.example.ezgroceries.ui.Produtos.TodosScreen" >></activity>
+        <activity android:name=".CheckCart" />
+
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
-        <activity android:name=".ui.Produtos.LaticiniosScreen"></activity>
+
+        <activity android:name=".ui.Produtos.LaticiniosScreen" />
         <activity android:name=".ui.Produtos.PadariaScreen" />
         <activity android:name=".ui.Produtos.BebidasScreen" />
         <activity android:name=".ui.Produtos.MerceariaScreen" />

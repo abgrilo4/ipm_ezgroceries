@@ -13,6 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+
+import com.example.ezgroceries.FinalScreenActivity;
 import com.example.ezgroceries.HomeScreen;
 import com.example.ezgroceries.LocationScreen;
 import com.example.ezgroceries.MainMenu;

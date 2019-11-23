@@ -1,9 +1,14 @@
 package com.example.ezgroceries;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.SparseBooleanArray;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.ArrayAdapter;
@@ -26,13 +31,22 @@ public class CheckCart extends AppCompatActivity {
 
         listaPlaceholder = new ArrayList<>();
         listaPlaceholder.add(new String());
-        listaPlaceholder.add(new Product("Fiambre da Perna Extra Fatias Nobre",2 , 1.0f));
+        listaPlaceholder.add(new Product("Apple",2 , 1.0f));
         listaPlaceholder.add(new Product("Apple",2 , 2.0f));
         listaPlaceholder.add(new Product("Apple",2 , 3.0f));
         listaPlaceholder.add(new Product("Apple",2 , 4.0f));
         listaPlaceholder.add(new Product("Apple",2 , 5.0f));
         listaPlaceholder.add(new Product("Apple",2 , 6.0f));
 
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+        // Get a support ActionBar corresponding to this toolbar
+        ActionBar ab = getSupportActionBar();
+        ab.setTitle("Carrinho");
+        //ab.setDisplayHomeAsUpEnabled(true);
+
+        // Enable the Up button
 
         removeItem = (Button)findViewById(R.id.RemoverItem);
         finishShoping = (Button)findViewById(R.id.FinalizarCompra);
@@ -63,8 +77,21 @@ public class CheckCart extends AppCompatActivity {
         finishShoping.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(CheckCart.this, FinalScreenActivity.class);
+                startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case  R.id.CheckCart:
+                Intent intent = new Intent(this, CheckCart.class);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
