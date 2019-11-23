@@ -22,37 +22,39 @@ public class AppClass  extends Application {
         this.carrinho = carrinho;
     }
 
-    public boolean allReadyInChart(Produto produto){
+    public Produto allReadyInChart(Produto produto){
         for (Produto p: carrinho
              ) {
             if(produto.nome().equals(p.nome()))
-                return true;
+                return p;
         }
-        return false;
+        return null;
     }
 
     public ArrayList<Produto> addProdutoCarrinho(Produto produto){
-       /*
-        if(allReadyInChart(produto)){
-            int i = quantidade.get(produto);
-            quantidade.remove(produto);
-            quantidade.put(produto, i++);
+        Produto p = allReadyInChart(produto);
+
+        if(p != null){
+            int i = quantidade.get(p);
+            quantidade.remove(p);
+            quantidade.put(p, i + 1);
         }else{
             quantidade.put(produto, 1);
-
+            carrinho.add(produto);
         }
-        */
-
-        carrinho.add(produto);
         return  carrinho;
     }
 
-    /*
     public int getQuantity(Produto produto){
-        return quantidade.get(produto);
-    }
 
-     */
+        for (Produto p: quantidade.keySet()
+             ) {
+            if(p.nome().equals(produto.nome()))
+                return quantidade.get(p);
+        }
+
+        return 0;
+    }
 
     public ArrayList<Produto> removeProdutoCarrinho(Produto produto){
         carrinho.remove(produto);

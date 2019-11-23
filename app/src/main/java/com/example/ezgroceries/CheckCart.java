@@ -43,12 +43,15 @@ public class CheckCart extends AppCompatActivity {
          */
 
         ArrayList<Produto> listaTeste = new ArrayList<>();
-        //((AppClass)this.getApplication()).addProdutoCarrinho(new Produto("Fiambre Perna Extra Fatias Nobre", 1.99, 1.99, 1.99, R.drawable.fiambre_perna_extra_fatias));
-        //((AppClass)this.getApplication()).addProdutoCarrinho(new Produto("Fiambre Perna ", 1.99, 1.99, 1.99, R.drawable.fiambre_perna_extra_fatias));
+        ((AppClass)this.getApplication()).addProdutoCarrinho(new Produto("Fiambre Perna Extra Fatias Nobre", 1.99, 1.99, 1.99, R.drawable.fiambre_perna_extra_fatias));
+        ((AppClass)this.getApplication()).addProdutoCarrinho(new Produto("Fiambre Perna Extra Fatias Nobre", 1.99, 1.99, 1.99, R.drawable.fiambre_perna_extra_fatias));
+        ((AppClass)this.getApplication()).addProdutoCarrinho(new Produto("Fiambre Perna Extra Fatias Nobre", 1.99, 1.99, 1.99, R.drawable.fiambre_perna_extra_fatias));
+        ((AppClass)this.getApplication()).addProdutoCarrinho(new Produto("Fiambre Perna Extra ", 1.99, 1.99, 1.99, R.drawable.fiambre_perna_extra_fatias));
+
         listaTeste = ((AppClass)this.getApplication()).getCarrinho();
 
         for (Produto p: listaTeste) {
-            listaPlaceholder.add(new Product(p.nome(), 1, p.melhorPrecoFloat(), p));
+            listaPlaceholder.add(new Product(p.nome(),  ((AppClass)this.getApplication()).getQuantity(p), p.melhorPrecoFloat(), p));
         }
 
 
