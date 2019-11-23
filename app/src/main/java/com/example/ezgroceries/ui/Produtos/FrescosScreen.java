@@ -31,7 +31,7 @@ public class FrescosScreen extends AppCompatActivity {
     MyAdapter myAdapter;
     ArrayList<Produto> frescos;
 
-    String[] categorias = {"Frescos", "Todos", "Mercearias", "Bebidas", "Laticínios", "Padaria"};
+    String[] categorias = {"Frescos", "Todos", "Mercearia", "Bebidas", "Laticínios", "Padaria"};
 
     Spinner sp;
     int current = 0;
@@ -41,7 +41,7 @@ public class FrescosScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_frescos_screen);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_f);
         setSupportActionBar(toolbar);
 
         sp = (Spinner)findViewById(R.id.spinnerfrescos);
