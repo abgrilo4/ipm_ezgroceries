@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.ezgroceries.ui.Produtos.TodosScreen;
+import com.example.ezgroceries.ui.home.HomeFragment;
 import com.example.ezgroceries.ui.login.LoginActivity;
 import com.example.ezgroceries.ui.send.SendFragment;
 import com.example.ezgroceries.ui.slideshow.DetalisSlideshowFragment;
@@ -42,6 +43,8 @@ import android.view.Menu;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import java.util.List;
 
 public class MainMenu extends AppCompatActivity {
 
@@ -108,8 +111,7 @@ public class MainMenu extends AppCompatActivity {
         FragmentManager fragmentManager=getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         Fragment fragment = fragmentManager.findFragmentById(R.id.nav_host_fragment);
-        if(fragment!=null){
-            Log.i("TAG","A substituir");
+        if(this.findViewById(R.id.localizacao) != null){
             fragmentTransaction.remove(fragment);
             fragmentTransaction.replace(R.id.nav_host_fragment,new SendFragment());
             fragmentTransaction.addToBackStack(null);
@@ -118,5 +120,17 @@ public class MainMenu extends AppCompatActivity {
             super.onBackPressed();
         }
 
+    }
+
+    public Fragment getVisibleFragment(){
+        FragmentManager fragmentManager = this.getSupportFragmentManager();
+        List<Fragment> fragments = fragmentManager.getFragments();
+        if(fragments != null){
+            for(Fragment fragment : fragments){
+                if(fragment != null && fragment.isVisible())
+                    return fragment;
+            }
+        }
+        return null;
     }
 }

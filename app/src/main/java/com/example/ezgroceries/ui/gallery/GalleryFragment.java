@@ -32,7 +32,6 @@ public class GalleryFragment extends Fragment {
 
         listaFavoritos = new ArrayList<>();
         ArrayList<Produto> list = ((AppClass)getActivity().getApplication()).getFavoritos();
-        list.add(new Produto("Apple", 1.0f, 2.0f, 0.99f, R.drawable.arroz_agulha_extra_longo_cigala));
 
         for (Produto produto: list) {
             listaFavoritos.add(produto.nome());

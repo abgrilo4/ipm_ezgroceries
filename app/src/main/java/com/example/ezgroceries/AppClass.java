@@ -41,6 +41,11 @@ public class AppClass  extends Application {
         return  favoritos;
     }
 
+    public ArrayList<Produto> remProdutoFavoritos(Produto produto){
+        favoritos.remove(produto);
+        return  favoritos;
+    }
+
     public ArrayList<Produto> addProdutoCarrinho(Produto produto){
         Produto p = allReadyInChart(produto);
 
