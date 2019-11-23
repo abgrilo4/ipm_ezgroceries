@@ -150,10 +150,12 @@ public class PadariaScreen extends AppCompatActivity {
 
     private ArrayList<Produto> getMyList() {
         padaria = new ArrayList<>();
-        padaria.add(new Produto("Fiambre Perna Extra Fatias Nobre", 1.99, 1.99, 1.99, R.drawable.arroz_carolino_extra_longo_saludaes));
-        padaria.add(new Produto("Queijo Flamengo Terra Nostra", 0.99, 0.99, 0.99, R.drawable.pao_bicos));
-        padaria.add(new Produto("Fiambre Perna Extra Fatias Nobre", 1.99, 1.99, 1.99, R.drawable.pao_de_centeio_serra_da_estrela));
-        padaria.add(new Produto("Queijo Flamengo Terra Nostra", 0.99, 0.99, 0.99, R.drawable.pao_de_agua));
+        padaria.add(new Produto("Pão de bicos", 0.19, 0.20, 0.21, R.drawable.pao_bicos));
+        padaria.add(new Produto("Pão de água", 1.99, 2.29, 2.09, R.drawable.pao_de_agua));
+        padaria.add(new Produto("Pão Serra da Estreal", 1.39, 1.35, 1.29, R.drawable.pao_de_centeio_serra_da_estrela));
+        padaria.add(new Produto("Pão de centeio", 1.95, 1.99, 2.01, R.drawable.pao_de_centeio));
+        padaria.add(new Produto("Pão de mistura", 0.59, 0.61, 0.58, R.drawable.pao_mistura));
+
 
         return padaria;
     }

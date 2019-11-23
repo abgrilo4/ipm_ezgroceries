@@ -150,8 +150,14 @@ public class BebidasScreen extends AppCompatActivity {
 
     private ArrayList<Produto> getMyList() {
         bebidas = new ArrayList<>();
-        bebidas.add(new Produto("Fiambre Perna Extra Fatias Nobre", 1.99, 1.99, 1.99, R.drawable.fiambre_perna_extra_fatias));
-        bebidas.add(new Produto("Queijo Flamengo Terra Nostra", 0.99, 0.99, 0.99, R.drawable.queijo_flamengo_fatias_terra_nostra));
+        bebidas.add(new Produto("Água Sem Gás 6L Fastio", 1.79, 2.19, 1.79, R.drawable.agua_6_litros_fastio));
+        bebidas.add(new Produto("Água sem Gás 4x1.5L Fastio", 2.28, 2.28, 2.35, R.drawable.agua_15l_fastio));
+        bebidas.add(new Produto("Água sem Gás 5.4L LUSO", 1.69, 1.30, 1.35, R.drawable.agua_5l_luso));
+        bebidas.add(new Produto("Água sem Gás 6x1.5L LUSO", 2.56, 2.54, 2.55, R.drawable.agua_15l_luso));
+        bebidas.add(new Produto("Néctar Pêssego 1L Compal", 0.99, 0.99, 0.99, R.drawable.compal_pessego));
+        bebidas.add(new Produto("Refrigerante Laranja 1.25L Sumol", 1.27, 1.28, 1.29, R.drawable.sumol_laranja));
+        bebidas.add(new Produto("Refrigerante 1L Coca Cola", 1.74, 1.35, 1.59, R.drawable.coca_cola));
+
 
         return bebidas;
     }

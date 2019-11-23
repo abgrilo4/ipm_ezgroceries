@@ -150,9 +150,17 @@ public class MerceariaScreen extends AppCompatActivity {
 
     private ArrayList<Produto> getMyList() {
         mercearia = new ArrayList<>();
-        mercearia.add(new Produto("Fiambre Perna Extra Fatias Nobre", 1.99, 1.99, 1.99, R.drawable.fiambre_perna_extra_fatias));
-        mercearia.add(new Produto("Fiambre Perna Extra Fatias Nobre", 1.99, 1.99, 1.99, R.drawable.fiambre_perna_extra_fatias));
-
+        mercearia.add(new Produto("Arroz Agulha 1Kg Cigala", 1.19, 1.16, 1.15, R.drawable.arroz_agulha_extra_longo_cigala));
+        mercearia.add(new Produto("Arroz Carolino 1Kg Cigala", 1.15, 1.15, 0.89, R.drawable.arroz_carolino_extra_longo_cigala));
+        mercearia.add(new Produto("Arroz Agulha 1Kg Saludães", 1.12, 1.09, 1.12, R.drawable.arroz_carolino_extra_longo_saludaes));
+        mercearia.add(new Produto("Arroz Carolino 1Kg Saludães", 1.15, 1.15, 1.14, R.drawable.arroz_carolino_extra_longo_saludaes));
+        mercearia.add(new Produto("Massa Esparguete 500g Milaneza", 0.56, 0.69, 0.55, R.drawable.massa_esparguete_milaneza));
+        mercearia.add(new Produto("Massa Cotovelinhos 500g Milaneza", 0.95, 0.95, 0.95, R.drawable.massa_cotovelinhos_milaneza));
+        mercearia.add(new Produto("Massa Macarrão 500g Milaneza", 0.95, 0.95, 0.95, R.drawable.massa_macarrao_milaneza));
+        mercearia.add(new Produto("Massa Esparguete 500g Nacional", 0.75, 0.51, 0.75, R.drawable.massa_esparguete_nacional));
+        mercearia.add(new Produto("Massa de Espirais 1Kg Nacional", 1.99, 1.89, 1.99, R.drawable.massa_espirais_nacional));
+        mercearia.add(new Produto("Massa de Cotovelinhos 500g Caçarola", 1.09, 1.09, 1.09, R.drawable.massa_cotovelinhos_cacarola));
+        mercearia.add(new Produto("Massa Espirais 500g Caçarola", 1.09, 1.09, 1.09, R.drawable.massa_espirais_cacarola));
         return mercearia;
     }
 

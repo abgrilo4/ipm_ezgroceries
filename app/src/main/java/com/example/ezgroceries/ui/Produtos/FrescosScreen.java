@@ -150,14 +150,8 @@ public class FrescosScreen extends AppCompatActivity {
 
     private ArrayList<Produto> getMyList() {
         frescos = new ArrayList<>();
-        frescos.add(new Produto("Fiambre Perna Extra Fatias Nobre", 1.99, 1.99, 1.99, R.drawable.fiambre_perna_extra_fatias));
-        frescos.add(new Produto("Queijo Flamengo Terra Nostra", 0.99, 0.99, 0.99, R.drawable.queijo_flamengo_fatias_terra_nostra));
-        frescos.add(new Produto("Fiambre Perna Extra Fatias Nobre", 1.99, 1.99, 1.99, R.drawable.arroz_agulha_extra_longo_cigala));
-        frescos.add(new Produto("Queijo Flamengo Terra Nostra", 0.99, 0.99, 0.99, R.drawable.arroz_carolino_extra_longo_cigala));
-        frescos.add(new Produto("Fiambre Perna Extra Fatias Nobre", 1.99, 1.99, 1.99, R.drawable.arroz_carolino_extra_longo_saludaes));
-        frescos.add(new Produto("Queijo Flamengo Terra Nostra", 0.99, 0.99, 0.99, R.drawable.pao_bicos));
-        frescos.add(new Produto("Fiambre Perna Extra Fatias Nobre", 1.99, 1.99, 1.99, R.drawable.pao_de_centeio_serra_da_estrela));
-        frescos.add(new Produto("Queijo Flamengo Terra Nostra", 0.99, 0.99, 0.99, R.drawable.pao_de_agua));
+        frescos.add(new Produto("Fiambre Perna Extra Fatias Nobre", 2.49, 2.49, 2.47, R.drawable.fiambre_perna_extra_fatias));
+        frescos.add(new Produto("Queijo Flamengo Terra Nostra", 1.99, 2.19, 1.97, R.drawable.queijo_flamengo_fatias_terra_nostra));
 
         return frescos;
     }

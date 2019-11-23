@@ -150,8 +150,10 @@ public class LaticiniosScreen extends AppCompatActivity {
 
     private ArrayList<Produto> getMyList() {
         laticinios = new ArrayList<>();
-        laticinios.add(new Produto("Fiambre Perna Extra Fatias Nobre", 1.99, 1.99, 1.99, R.drawable.fiambre_perna_extra_fatias));
-
+        laticinios.add(new Produto("Leite Meio Gordo 1L Gresso", 0.56, 0.55, 0.55, R.drawable.gresso_mg));
+        laticinios.add(new Produto("Leite Magro 1L Gresso", 0.56, 0.55, 0.55, R.drawable.gresso_m));
+        laticinios.add(new Produto("Leite Meio Gordo 1L Mimosa", 0.69, 0.68, 0.69, R.drawable.mimosa_mg));
+        laticinios.add(new Produto("Leite Magro 1L Mimosa", 0.69, 0.69, 0.69, R.drawable.mimosa_m));
         return laticinios;
     }
 

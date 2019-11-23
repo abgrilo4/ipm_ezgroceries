@@ -150,14 +150,36 @@ public class TodosScreen extends AppCompatActivity {
 
     private ArrayList<Produto> getMyList() {
         todos = new ArrayList<>();
-        todos.add(new Produto("Fiambre Perna Extra Fatias Nobre", 1.99, 1.99, 1.99, R.drawable.fiambre_perna_extra_fatias));
-        todos.add(new Produto("Queijo Flamengo Terra Nostra", 0.99, 0.99, 0.99, R.drawable.queijo_flamengo_fatias_terra_nostra));
-        todos.add(new Produto("Fiambre Perna Extra Fatias Nobre", 1.99, 1.99, 1.99, R.drawable.arroz_agulha_extra_longo_cigala));
-        todos.add(new Produto("Queijo Flamengo Terra Nostra", 0.99, 0.99, 0.99, R.drawable.arroz_carolino_extra_longo_cigala));
-        todos.add(new Produto("Fiambre Perna Extra Fatias Nobre", 1.99, 1.99, 1.99, R.drawable.arroz_carolino_extra_longo_saludaes));
-        todos.add(new Produto("Queijo Flamengo Terra Nostra", 0.99, 0.99, 0.99, R.drawable.pao_bicos));
-        todos.add(new Produto("Fiambre Perna Extra Fatias Nobre", 1.99, 1.99, 1.99, R.drawable.pao_de_centeio_serra_da_estrela));
-        todos.add(new Produto("Queijo Flamengo Terra Nostra", 0.99, 0.99, 0.99, R.drawable.pao_de_agua));
+        todos.add(new Produto("Água Sem Gás 6L Fastio", 1.79, 2.19, 1.79, R.drawable.agua_6_litros_fastio));
+        todos.add(new Produto("Água sem Gás 4x1.5L Fastio", 2.28, 2.28, 2.35, R.drawable.agua_15l_fastio));
+        todos.add(new Produto("Água sem Gás 5.4L LUSO", 1.69, 1.30, 1.35, R.drawable.agua_5l_luso));
+        todos.add(new Produto("Água sem Gás 6x1.5L LUSO", 2.56, 2.54, 2.55, R.drawable.agua_15l_luso));
+        todos.add(new Produto("Arroz Agulha 1Kg Cigala", 1.19, 1.16, 1.15, R.drawable.arroz_agulha_extra_longo_cigala));
+        todos.add(new Produto("Arroz Carolino 1Kg Cigala", 1.15, 1.15, 0.89, R.drawable.arroz_carolino_extra_longo_cigala));
+        todos.add(new Produto("Arroz Agulha 1Kg Saludães", 1.12, 1.09, 1.12, R.drawable.arroz_carolino_extra_longo_saludaes));
+        todos.add(new Produto("Arroz Carolino 1Kg Saludães", 1.15, 1.15, 1.14, R.drawable.arroz_carolino_extra_longo_saludaes));
+        todos.add(new Produto("Fiambre Perna Extra Fatias Nobre", 2.49, 2.49, 2.47, R.drawable.fiambre_perna_extra_fatias));
+        todos.add(new Produto("Leite Meio Gordo 1L Gresso", 0.56, 0.55, 0.55, R.drawable.gresso_mg));
+        todos.add(new Produto("Leite Magro 1L Gresso", 0.56, 0.55, 0.55, R.drawable.gresso_m));
+        todos.add(new Produto("Leite Meio Gordo 1L Mimosa", 0.69, 0.68, 0.69, R.drawable.mimosa_mg));
+        todos.add(new Produto("Leite Magro 1L Mimosa", 0.69, 0.69, 0.69, R.drawable.mimosa_m));
+        todos.add(new Produto("Néctar Pêssego 1L Compal", 0.99, 0.99, 0.99, R.drawable.compal_pessego));
+        todos.add(new Produto("Refrigerante Laranja 1.25L Sumol", 1.27, 1.28, 1.29, R.drawable.sumol_laranja));
+        todos.add(new Produto("Refrigerante 1L Coca Cola", 1.74, 1.35, 1.59, R.drawable.coca_cola));
+        todos.add(new Produto("Massa Esparguete 500g Milaneza", 0.56, 0.69, 0.55, R.drawable.massa_esparguete_milaneza));
+        todos.add(new Produto("Massa Cotovelinhos 500g Milaneza", 0.95, 0.95, 0.95, R.drawable.massa_cotovelinhos_milaneza));
+        todos.add(new Produto("Massa Macarrão 500g Milaneza", 0.95, 0.95, 0.95, R.drawable.massa_macarrao_milaneza));
+        todos.add(new Produto("Massa Esparguete 500g Nacional", 0.75, 0.51, 0.75, R.drawable.massa_esparguete_nacional));
+        todos.add(new Produto("Massa de Espirais 1Kg Nacional", 1.99, 1.89, 1.99, R.drawable.massa_espirais_nacional));
+        todos.add(new Produto("Massa de Cotovelinhos 500g Caçarola", 1.09, 1.09, 1.09, R.drawable.massa_cotovelinhos_cacarola));
+        todos.add(new Produto("Massa Espirais 500g Caçarola", 1.09, 1.09, 1.09, R.drawable.massa_espirais_cacarola));
+        todos.add(new Produto("Pão de bicos", 0.19, 0.20, 0.21, R.drawable.pao_bicos));
+        todos.add(new Produto("Pão de água", 1.99, 2.29, 2.09, R.drawable.pao_de_agua));
+        todos.add(new Produto("Pão Serra da Estreal", 1.39, 1.35, 1.29, R.drawable.pao_de_centeio_serra_da_estrela));
+        todos.add(new Produto("Pão de centeio", 1.95, 1.99, 2.01, R.drawable.pao_de_centeio));
+        todos.add(new Produto("Pão de mistura", 0.59, 0.61, 0.58, R.drawable.pao_mistura));
+        todos.add(new Produto("Queijo Flamengo Terra Nostra", 1.99, 2.19, 1.97, R.drawable.queijo_flamengo_fatias_terra_nostra));
+
 
         return todos;
     }
