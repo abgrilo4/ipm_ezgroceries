@@ -1,10 +1,10 @@
 package com.example.ezgroceries.ui.Produtos;
 
-import android.graphics.ColorSpace;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.content.Context;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -43,5 +43,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
     @Override
     public int getItemCount() {
         return models.size();
+    }
+
+    public void filteredList(ArrayList<Produto> filtered) {
+        models = filtered;
+        notifyDataSetChanged();
     }
 }

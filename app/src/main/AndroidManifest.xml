@@ -27,8 +27,7 @@
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
-
-        <activity android:name=".ui.Produtos.LaticiniosScreen" />
+        <activity android:name=".ui.Produtos.LaticiniosScreen"></activity>
         <activity android:name=".ui.Produtos.PadariaScreen" />
         <activity android:name=".ui.Produtos.BebidasScreen" />
         <activity android:name=".ui.Produtos.MerceariaScreen" />

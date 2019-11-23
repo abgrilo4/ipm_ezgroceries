@@ -1,9 +1,5 @@
 package com.example.ezgroceries.ui.Produtos;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +7,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.ezgroceries.MainMenu;
 import com.example.ezgroceries.R;
 
 import java.util.ArrayList;
@@ -80,6 +81,12 @@ public class MerceariaScreen extends AppCompatActivity {
 
         myAdapter = new MyAdapter(this, getMyList());
         mRecyclerView.setAdapter(myAdapter);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(MerceariaScreen.this, MainMenu.class);
+        startActivity(intent);
     }
 
     private ArrayList<Produto> getMyList() {
