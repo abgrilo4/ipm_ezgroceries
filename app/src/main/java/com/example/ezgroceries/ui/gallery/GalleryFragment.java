@@ -16,7 +16,9 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.ezgroceries.AppClass;
 import com.example.ezgroceries.R;
+import com.example.ezgroceries.ui.Produtos.Produto;
 
 import java.util.ArrayList;
 
@@ -29,8 +31,12 @@ public class GalleryFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         listaFavoritos = new ArrayList<>();
-        listaFavoritos.add("Fiambre");
-        listaFavoritos.add("Queijo");
+        ArrayList<Produto> list = ((AppClass)getActivity().getApplication()).getFavoritos();
+        list.add(new Produto("Apple", 1.0f, 2.0f, 0.99f, R.drawable.arroz_agulha_extra_longo_cigala));
+
+        for (Produto produto: list) {
+            listaFavoritos.add(produto.nome());
+        }
         galleryViewModel = ViewModelProviders.of(this).get(GalleryViewModel.class);
         View root = inflater.inflate(R.layout.fragment_gallery, container, false);
         final TextView textView = root.findViewById(R.id.text_gallery);
