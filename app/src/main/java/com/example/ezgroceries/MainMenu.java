@@ -67,11 +67,11 @@ public class MainMenu extends AppCompatActivity {
         toolbar.setTitle("");
         NavigationUI.setupWithNavController(navigationView, navController);
         //Get user's name and email
-        if (savedInstanceState == null) {
+        /*if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
             if(extras == null) {
-                username = "Oh no";
-                email = "oh no";
+                username = ((TextView) findViewById(R.id.sliderUsername)).getText().toString();
+                email = ((TextView) findViewById(R.id.sliderEmail)).getText().toString();
 
             } else {
                 username = extras.getString("user");
@@ -81,19 +81,17 @@ public class MainMenu extends AppCompatActivity {
             username= (String) savedInstanceState.getSerializable("user");
             email= (String) savedInstanceState.getSerializable("email");
         }
-
-        Log.i("tag", "user: " + username);
-        Log.i("tag", "EMAIL: " + email);
-
+        ((AppClass)getApplication()).setGlobalVariable("user", username);
+        ((AppClass)getApplication()).setGlobalVariable("email", email);*/
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         //Set username and email
         TextView userText = (TextView) findViewById(R.id.sliderUsername);
-        userText.setText(username);
+        userText.setText(((AppClass)getApplication()).getGlobalVariable("user"));
         TextView emailText = (TextView) findViewById(R.id.sliderEmail);
-        emailText.setText(email);
+        emailText.setText(((AppClass)getApplication()).getGlobalVariable("email"));
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_menu, menu);
 

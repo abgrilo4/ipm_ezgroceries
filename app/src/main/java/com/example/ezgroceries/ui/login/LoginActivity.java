@@ -23,6 +23,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ezgroceries.AppClass;
 import com.example.ezgroceries.MainMenu;
 import com.example.ezgroceries.R;
 
@@ -49,8 +50,8 @@ public class LoginActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
             Intent intent = new Intent(LoginActivity.this, MainMenu.class);
-            intent.putExtra("user", "Guest User");
-            intent.putExtra("email", "No email available");
+            ((AppClass)getApplication()).setGlobalVariable("user", "Guest User");
+            ((AppClass)getApplication()).setGlobalVariable("email", "No email available");
 
             startActivity(intent);
         }});
@@ -107,6 +108,8 @@ public class LoginActivity extends AppCompatActivity{
             public void afterTextChanged(Editable s) {
                 loginViewModel.loginDataChanged(usernameEditText.getText().toString(), emailEditText.getText().toString(),
                         passwordEditText.getText().toString());
+                ((AppClass)getApplication()).setGlobalVariable("user", usernameEditText.getText().toString());
+                ((AppClass)getApplication()).setGlobalVariable("email", emailEditText.getText().toString());
             }
         };
         usernameEditText.addTextChangedListener(afterTextChangedListener);
@@ -139,8 +142,6 @@ public class LoginActivity extends AppCompatActivity{
 
         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
         Intent intent = new Intent(LoginActivity.this, MainMenu.class);
-        intent.putExtra("user", ((EditText)findViewById(R.id.username)).getText().toString());
-        intent.putExtra("email", ((EditText)findViewById(R.id.email)).getText().toString());
         startActivity(intent);
     }
 
