@@ -2,9 +2,32 @@ package com.example.ezgroceries;
 
 import android.app.Application;
 
+import com.example.ezgroceries.ui.Produtos.Produto;
+
+import java.util.ArrayList;
+
 public class AppClass  extends Application {
     private String globalUsername = "Guest User";
     private String globalEmail = "No email available";
+    private ArrayList<Produto> carrinho = new ArrayList<>();
+
+    public ArrayList<Produto> getCarrinho() {
+        return carrinho;
+    }
+
+    public void setCarrinho(ArrayList<Produto> carrinho) {
+        this.carrinho = carrinho;
+    }
+
+    public ArrayList<Produto> addProdutoCarrinho(Produto produto){
+        carrinho.add(produto);
+        return  carrinho;
+    }
+
+    public ArrayList<Produto> removeProdutoCarrinho(Produto produto){
+        carrinho.remove(produto);
+        return  carrinho;
+    }
 
     public String getGlobalVariable(String varName) {
 
