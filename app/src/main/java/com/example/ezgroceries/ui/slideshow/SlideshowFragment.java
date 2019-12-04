@@ -61,6 +61,7 @@ public class SlideshowFragment extends Fragment {
                 for (int item = count-1; item>=0; item--){
                     if(positionChecker.get(item)){
                         ((AppClass) getActivity().getApplication()).getListasFav().remove(listaPlaceholder.get(item));
+                        ((AppClass) getActivity().getApplication()).getQuantFav().remove(listaPlaceholder.get(item));
                         adapter.remove(listaPlaceholder.get(item));
                     }
                 }

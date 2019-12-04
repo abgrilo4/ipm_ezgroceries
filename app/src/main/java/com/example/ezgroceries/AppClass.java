@@ -13,6 +13,11 @@ public class AppClass  extends Application {
     private String globalEmail = "No email available";
     private ArrayList<Produto> carrinho = new ArrayList<>();
     private ArrayList<Produto> favoritos = new ArrayList<>();
+
+    public void setQuantidade(HashMap<Produto, Integer> quantidade) {
+        this.quantidade = quantidade;
+    }
+
     private HashMap<Produto, Integer> quantidade = new HashMap<>();
 
     public ArrayList<Produto> getCarrinho() {
@@ -24,6 +29,20 @@ public class AppClass  extends Application {
     }
 
     public HashMap<String, ArrayList<Produto>> listasFav = new HashMap<>();
+
+    public HashMap<String, HashMap<Produto, Integer>> quantFav = new HashMap<>();
+
+    public HashMap<Produto, Integer> getQuantidade() {
+        return quantidade;
+    }
+
+    public HashMap<String, HashMap<Produto, Integer>> getQuantFav() {
+        return quantFav;
+    }
+
+    public void setQuantFav(HashMap<String, HashMap<Produto, Integer>> quantFav) {
+        this.quantFav = quantFav;
+    }
 
     public void setCarrinho(ArrayList<Produto> carrinho) {
         this.carrinho = carrinho;

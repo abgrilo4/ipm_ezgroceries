@@ -13,6 +13,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.ezgroceries.ui.Produtos.Produto;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class addLista extends AppCompatActivity {
 
     private Button add;
@@ -60,8 +65,15 @@ public class addLista extends AppCompatActivity {
                 }else{
                     ((AppClass)addLista.this.getApplication()).getListasFav().put(
                             nome,
-                            ((AppClass)addLista.this.getApplication()).getCarrinho()
+                            new ArrayList<Produto> (((AppClass)addLista.this.getApplication()).getCarrinho())
                     );
+
+                    ((AppClass)addLista.this.getApplication()).getQuantFav().put(
+                            nome,
+                            new HashMap<Produto, Integer>(((AppClass)addLista.this.getApplication()).getQuantidade())
+                    );
+
+
                     Toast.makeText(addLista.this, "Lista adicionada", Toast.LENGTH_LONG).show();
                     addLista.this.finish();
                 }

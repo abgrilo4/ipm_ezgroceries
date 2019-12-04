@@ -32,15 +32,6 @@ public class CheckCart extends AppCompatActivity {
         listaPlaceholder = new ArrayList<>();
 
         listaPlaceholder.add(new String());
-        /*
-        listaPlaceholder.add(new Product("Apple",2 , 1.0f));
-        listaPlaceholder.add(new Product("Apple",2 , 2.0f));
-        listaPlaceholder.add(new Product("Apple",2 , 3.0f));
-        listaPlaceholder.add(new Product("Apple",2 , 4.0f));
-        listaPlaceholder.add(new Product("Apple",2 , 5.0f));
-        listaPlaceholder.add(new Product("Apple",2 , 6.0f));
-
-         */
 
         ArrayList<Produto> listaTeste = new ArrayList<>();
 
