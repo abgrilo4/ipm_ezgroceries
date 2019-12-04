@@ -13,32 +13,41 @@
         android:required="true" />
 
     <application
+        android:name=".AppClass"
         android:allowBackup="true"
         android:icon="@drawable/ezgroceries"
         android:label="@string/app_name"
         android:roundIcon="@drawable/ezgroceries"
         android:supportsRtl="true"
-        android:name=".AppClass"
         android:theme="@style/AppTheme">
-        <activity android:name=".FinalScreenActivity"
-            android:parentActivityName="com.example.ezgroceries.ui.Produtos.TodosScreen" ></activity>
+        <activity android:name=".addLista"></activity>
+        <activity
+            android:name=".FinalScreenActivity"
+            android:parentActivityName=".ui.Produtos.TodosScreen" />
         <activity android:name=".CheckCart" />
 
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
-        <activity android:name=".ui.Produtos.LaticiniosScreen"
-            android:parentActivityName=".MainMenu"></activity>
-        <activity android:name=".ui.Produtos.PadariaScreen"
-            android:parentActivityName=".MainMenu"/>
-        <activity android:name=".ui.Produtos.BebidasScreen"
-            android:parentActivityName=".MainMenu"/>
-        <activity android:name=".ui.Produtos.MerceariaScreen"
-            android:parentActivityName=".MainMenu"/>
-        <activity android:name=".ui.Produtos.FrescosScreen"
-            android:parentActivityName=".MainMenu"/>
-        <activity android:name=".ui.Produtos.TodosScreen"
-            android:parentActivityName=".MainMenu"/>
+
+        <activity
+            android:name=".ui.Produtos.LaticiniosScreen"
+            android:parentActivityName=".MainMenu" />
+        <activity
+            android:name=".ui.Produtos.PadariaScreen"
+            android:parentActivityName=".MainMenu" />
+        <activity
+            android:name=".ui.Produtos.BebidasScreen"
+            android:parentActivityName=".MainMenu" />
+        <activity
+            android:name=".ui.Produtos.MerceariaScreen"
+            android:parentActivityName=".MainMenu" />
+        <activity
+            android:name=".ui.Produtos.FrescosScreen"
+            android:parentActivityName=".MainMenu" />
+        <activity
+            android:name=".ui.Produtos.TodosScreen"
+            android:parentActivityName=".MainMenu" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -83,4 +92,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

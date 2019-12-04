@@ -6,6 +6,7 @@ import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
@@ -28,7 +29,7 @@ public class FinalScreenActivity extends AppCompatActivity {
     ArrayList<Integer> qtdd;
     TextView valView;
     RadioGroup radGrup;
-
+    private Button addFavourites;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +48,7 @@ public class FinalScreenActivity extends AppCompatActivity {
         carrinho = getMyList1();
         qtdd = getMyList2();
         myAdapter = new AdapterFinal(this, carrinho, qtdd);
+        addFavourites = (Button)findViewById(R.id.button);
         mRecyclerView.setAdapter(myAdapter);
 
         radGrup = findViewById(R.id.radGrup);
@@ -59,6 +61,16 @@ public class FinalScreenActivity extends AppCompatActivity {
                 valView.setText("Total: " + String.valueOf(calcPrice()) + " €");
             }
         });
+
+        addFavourites.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FinalScreenActivity.this, addLista.class);
+                startActivity(intent);
+            }
+        });
+
+
 
     }
 

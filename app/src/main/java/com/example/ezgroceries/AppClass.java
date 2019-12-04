@@ -23,8 +23,18 @@ public class AppClass  extends Application {
         return favoritos;
     }
 
+    public HashMap<String, ArrayList<Produto>> listasFav = new HashMap<>();
+
     public void setCarrinho(ArrayList<Produto> carrinho) {
         this.carrinho = carrinho;
+    }
+
+    public HashMap<String, ArrayList<Produto>> getListasFav() {
+        return listasFav;
+    }
+
+    public void setListasFav(HashMap<String, ArrayList<Produto>> listasFav) {
+        this.listasFav = listasFav;
     }
 
     public Produto allReadyInChart(Produto produto){

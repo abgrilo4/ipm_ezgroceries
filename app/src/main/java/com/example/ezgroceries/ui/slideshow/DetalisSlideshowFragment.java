@@ -11,7 +11,10 @@ import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.example.ezgroceries.AppClass;
+import com.example.ezgroceries.Product;
 import com.example.ezgroceries.R;
+import com.example.ezgroceries.ui.Produtos.Produto;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,32 +34,22 @@ public class DetalisSlideshowFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        ArrayList<String> list = new ArrayList<>();
-        list.add("Cenouras");
-        list.add("Farinha");
-        map.put(0, list);
-        list = new ArrayList<>();
-        list.add("Pão");
-        list.add("Alho");
-        list.add("Sal");
-        map.put(1, list);
-        list = new ArrayList<>();
-        list.add("Frango");
-        list.add("Caril em pó");
-        list.add("Arroz");
-        map.put(2, list);
-        list = new ArrayList<>();
-        list.add("Frango");
-        list.add("Arroz");
-        list.add("Cebola");
-        map.put(3, list);
+        ArrayList<String> listKeys = new ArrayList<>();
+        listKeys.addAll(((AppClass) getActivity().getApplication()).getListasFav().keySet());
+        ArrayList<Produto> productsInList = new ArrayList<>();
+        productsInList = ((AppClass) getActivity().getApplication()).getListasFav().get(listKeys.get(checkBoxIndex));
+
+        ArrayList<String> nomes = new ArrayList<>();
+        for (Produto p : productsInList) {
+            nomes.add(p.nome());
+        }
 
         View view = inflater.inflate(R.layout.fragment_slideshow_details, container, false);
         final ListView listView = (ListView) view.findViewById(R.id.ListaIngredientes);
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                 getActivity(),
                 android.R.layout.simple_list_item_1,
-                map.get(checkBoxIndex));
+                nomes);
         listView.setAdapter(adapter);
 
         return view;
