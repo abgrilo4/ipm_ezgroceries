@@ -20,6 +20,7 @@ public class CheckCart extends AppCompatActivity {
 
     private Button removeItem;
     private Button finishShoping;
+    private Button reduceQuant;
     private ListView listView;
     private ArrayList<Object> listaPlaceholder;
     private ProductAdapter adapter;
@@ -53,6 +54,7 @@ public class CheckCart extends AppCompatActivity {
 
         removeItem = (Button)findViewById(R.id.RemoverItem);
         finishShoping = (Button)findViewById(R.id.FinalizarCompra);
+        reduceQuant = (Button)findViewById(R.id.button6);
         listView = (ListView)findViewById(R.id.ItemsNoCarrinho);
         adapter = new ProductAdapter(this, listaPlaceholder);
         listView.setAdapter(adapter);
@@ -84,6 +86,45 @@ public class CheckCart extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(CheckCart.this, FinalScreenActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        reduceQuant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ArrayList<Object> toRemove = new ArrayList<>();
+
+                for (Object o: listaPlaceholder) {
+                    if(o instanceof Product){
+                        if(((Product) o).isCheckbox())
+                            toRemove.add(o);
+
+                        ((Product) o).setCheckboxFalse();
+                    }
+
+
+                }
+
+                for (Object p: toRemove) {
+                    Product product = (Product) p;
+
+                    int quant = ((AppClass)CheckCart.this.getApplication()).getQuantidade().get(product.getProduto());
+                    ((AppClass)CheckCart.this.getApplication()).getQuantidade().remove(product.getProduto());
+                    ((AppClass)CheckCart.this.getApplication()).getQuantidade().put(product.getProduto(), quant-1);
+
+                    for (Object o: listaPlaceholder) {
+                        if(o == p)
+                            ((Product) o).setNumber(quant-1);
+                    }
+
+                    if (quant-1 == 0){
+                        ((AppClass)CheckCart.this.getApplication()).removeProdutoCarrinho(product.getProduto());
+                        listaPlaceholder.remove(p);
+                    }
+
+                }
+
+                listView.setAdapter(adapter);
             }
         });
     }
