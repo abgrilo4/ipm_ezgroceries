@@ -7,11 +7,11 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/baseline_more_vert_24"
-            android:title="Escolher opção" />
+            android:title="Página inicial" />
         <item
             android:id="@+id/nav_share"
             android:icon="@drawable/baseline_person_24"
-            android:title="Alterar Perfil" />
+            android:title="Editar Perfil" />
 
         <item
             android:id="@+id/nav_gallery"

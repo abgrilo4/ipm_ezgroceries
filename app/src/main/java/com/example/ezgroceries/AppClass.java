@@ -99,4 +99,8 @@ public class AppClass  extends Application {
                 break;
         }
     }
+
+    public boolean isCartEmpty() {
+        return  carrinho.isEmpty();
+    }
 }

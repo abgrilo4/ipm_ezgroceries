@@ -4,11 +4,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.DimenRes;
 import androidx.annotation.NonNull;
@@ -52,6 +54,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
             @Override
             public void onClick(View v) {
                 ((AppClass)((Activity)c).getApplication()).addProdutoCarrinho(models.get(i));
+                Toast toast = Toast.makeText(c, "Produto adicionado!", Toast.LENGTH_SHORT);
+                //toast.setGravity(Gravity.TOP, 0, 125);
+                toast.show();
             }
         });
         ((MyHolder)myHolder).favView.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

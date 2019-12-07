@@ -64,6 +64,9 @@ public class LoginActivity extends AppCompatActivity{
                 }
 
                 loginButton.setEnabled(loginFormState.isDataValid());
+                if (loginFormState.getEmailError() != null) {
+                    emailEditText.setError(getString(loginFormState.getEmailError()));
+                }
                 if (loginFormState.getUsernameError() != null) {
                     usernameEditText.setError(getString(loginFormState.getUsernameError()));
                 }

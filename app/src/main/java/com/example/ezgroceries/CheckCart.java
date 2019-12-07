@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.ezgroceries.ui.Produtos.Produto;
 
@@ -91,8 +92,15 @@ public class CheckCart extends AppCompatActivity {
         finishShoping.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CheckCart.this, FinalScreenActivity.class);
-                startActivity(intent);
+                if (((AppClass)getApplication()).isCartEmpty()) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "Carrinho vazio!", Toast.LENGTH_SHORT);
+                    //toast.setGravity(Gravity.TOP, 0, 125);
+                    toast.show();
+                } else {
+                    Intent intent = new Intent(CheckCart.this, FinalScreenActivity.class);
+                    startActivity(intent);
+                }
+
             }
         });
     }
