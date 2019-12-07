@@ -72,6 +72,10 @@ public class MainMenu extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         toolbar.setTitle("");
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        Menu nav_Menu = navigationView.getMenu();
+        if (((AppClass)getApplication()).getGlobalVariable("user") == "Guest User")
+            nav_Menu.findItem(R.id.nav_share).setVisible(false);
     }
 
     @Override

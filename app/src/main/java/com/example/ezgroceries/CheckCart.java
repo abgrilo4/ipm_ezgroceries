@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -94,7 +95,7 @@ public class CheckCart extends AppCompatActivity {
             public void onClick(View v) {
                 if (((AppClass)getApplication()).isCartEmpty()) {
                     Toast toast = Toast.makeText(getApplicationContext(), "Carrinho vazio!", Toast.LENGTH_SHORT);
-                    //toast.setGravity(Gravity.TOP, 0, 125);
+                    toast.setGravity(Gravity.TOP, 0, 125);
                     toast.show();
                 } else {
                     Intent intent = new Intent(CheckCart.this, FinalScreenActivity.class);

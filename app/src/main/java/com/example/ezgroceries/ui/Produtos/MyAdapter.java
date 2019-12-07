@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -49,11 +50,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
         myHolder.mImageView.setImageResource(models.get(i).idImg());
 
 
-
         ((MyHolder)myHolder).addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((AppClass)((Activity)c).getApplication()).addProdutoCarrinho(models.get(i));
+                EditText quant = ((Activity) c).findViewById(R.id.quantBox);
+                ((AppClass)((Activity)c).getApplication()).addProdutoCarrinho(models.get(i), Integer.parseInt(quant.getText().toString()));
                 Toast toast = Toast.makeText(c, "Produto adicionado!", Toast.LENGTH_SHORT);
                 //toast.setGravity(Gravity.TOP, 0, 125);
                 toast.show();

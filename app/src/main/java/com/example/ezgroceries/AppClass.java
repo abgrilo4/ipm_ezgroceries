@@ -100,6 +100,20 @@ public class AppClass  extends Application {
         }
     }
 
+    public ArrayList<Produto> addProdutoCarrinho(Produto produto, int amount){
+        Produto p = allReadyInChart(produto);
+
+        if(p != null){
+            int i = quantidade.get(p);
+            quantidade.remove(p);
+            quantidade.put(p, i + amount);
+        }else{
+            quantidade.put(produto, amount);
+            carrinho.add(produto);
+        }
+        return  carrinho;
+    }
+
     public boolean isCartEmpty() {
         return  carrinho.isEmpty();
     }
