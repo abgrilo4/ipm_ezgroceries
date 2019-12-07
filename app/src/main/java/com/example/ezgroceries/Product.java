@@ -17,6 +17,10 @@ public class Product {
         this.produto = produto;
     }
 
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
     public Produto getProduto() {
         return produto;
     }
@@ -42,6 +46,10 @@ public class Product {
         if(checkbox == false)
             checkbox = true;
         else
+            checkbox = false;
+    }
+
+    public void setCheckboxFalse() {
             checkbox = false;
     }
 }
