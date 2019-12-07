@@ -21,7 +21,7 @@ public class MyHolder extends RecyclerView.ViewHolder {
 
     ImageView mImageView;
     CheckBox favView;
-    TextView mTitle, mPreco;
+    TextView mTitle, mPreco, mStore;
     Button addBtn;
     EditText quant;
 
@@ -34,5 +34,6 @@ public class MyHolder extends RecyclerView.ViewHolder {
        this.favView = itemView.findViewById(R.id.fav);
        this.addBtn = itemView.findViewById(R.id.adic);
        this.quant = itemView.findViewById(R.id.quantBox);
+       this.mStore = itemView.findViewById(R.id.supermercado);
    }
 }

@@ -6,7 +6,9 @@ public class Produto {
     double preco1;
     double preco2;
     double preco3;
+    double minPrice;
     int idImg;
+
 
     public Produto(String nome, double preco1, double preco2, double preco3, int idImg) {
         this.nome = nome;
@@ -14,6 +16,15 @@ public class Produto {
         this.preco2 = preco2;
         this.preco3 = preco3;
         this.idImg = idImg;
+        this.minPrice = melhorPreco2();
+    }
+
+    public String melhorLoja() {
+        if(minPrice==preco1)
+            return "Continente";
+        else if(minPrice==preco2)
+            return "Lidl";
+        else return "Jumbo";
     }
 
     public String nome() {

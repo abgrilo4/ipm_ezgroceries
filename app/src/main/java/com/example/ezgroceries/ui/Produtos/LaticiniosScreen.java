@@ -157,6 +157,8 @@ public class LaticiniosScreen extends AppCompatActivity {
         laticinios.add(new Produto("Leite Magro 1L Gresso", 0.56, 0.55, 0.55, R.drawable.gresso_m));
         laticinios.add(new Produto("Leite Meio Gordo 1L Mimosa", 0.69, 0.68, 0.69, R.drawable.mimosa_mg));
         laticinios.add(new Produto("Leite Magro 1L Mimosa", 0.69, 0.69, 0.69, R.drawable.mimosa_m));
+        laticinios.add(new Produto("Queijo Flamengo Terra Nostra", 1.99, 2.19, 1.97, R.drawable.queijo_flamengo_fatias_terra_nostra));
+
         return laticinios;
     }
 

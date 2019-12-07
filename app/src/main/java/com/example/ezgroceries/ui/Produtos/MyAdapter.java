@@ -48,7 +48,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
         myHolder.mTitle.setText(models.get(i).nome());
         myHolder.mPreco.setText(models.get(i).melhorPreco());
         myHolder.mImageView.setImageResource(models.get(i).idImg());
-
+        myHolder.mStore.setText(models.get(i).melhorLoja());
 
         ((MyHolder)myHolder).addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
