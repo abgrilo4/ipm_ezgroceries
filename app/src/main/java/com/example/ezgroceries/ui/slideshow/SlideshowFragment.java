@@ -21,7 +21,9 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.ezgroceries.AppClass;
 import com.example.ezgroceries.R;
+import com.example.ezgroceries.addLista;
 
 import java.util.ArrayList;
 
@@ -33,11 +35,8 @@ public class SlideshowFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              final ViewGroup container, Bundle savedInstanceState) {
 
-        listaPlaceholder = new ArrayList<>();
-        listaPlaceholder.add("Bolo de cenoura");
-        listaPlaceholder.add("Açorda");
-        listaPlaceholder.add("Caril de frango");
-        listaPlaceholder.add("Canja");
+        listaPlaceholder = new ArrayList<String>();
+        listaPlaceholder.addAll(((AppClass) getActivity().getApplication()).getListasFav().keySet());
 
         slideshowViewModel =
                 ViewModelProviders.of(this).get(SlideshowViewModel.class);
@@ -61,6 +60,8 @@ public class SlideshowFragment extends Fragment {
                 int count = listView.getCount();
                 for (int item = count-1; item>=0; item--){
                     if(positionChecker.get(item)){
+                        ((AppClass) getActivity().getApplication()).getListasFav().remove(listaPlaceholder.get(item));
+                        ((AppClass) getActivity().getApplication()).getQuantFav().remove(listaPlaceholder.get(item));
                         adapter.remove(listaPlaceholder.get(item));
                     }
                 }
