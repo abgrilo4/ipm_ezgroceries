@@ -51,7 +51,7 @@
         android:id="@+id/button6"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Diminutir quantidade"
+        android:text="Reduzir quantidade"
         app:layout_constraintBottom_toTopOf="@+id/RemoverItem"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
