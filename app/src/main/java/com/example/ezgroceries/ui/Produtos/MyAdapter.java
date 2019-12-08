@@ -44,7 +44,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyHolder myHolder, final int i) {
+    public void onBindViewHolder(@NonNull final MyHolder myHolder, final int i) {
         myHolder.mTitle.setText(models.get(i).nome());
         myHolder.mPreco.setText(models.get(i).melhorPreco());
         myHolder.mImageView.setImageResource(models.get(i).idImg());
@@ -53,13 +53,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
         ((MyHolder)myHolder).addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText quant = ((Activity) c).findViewById(R.id.quantBox);
+                EditText quant = myHolder.quant;
                 ((AppClass)((Activity)c).getApplication()).addProdutoCarrinho(models.get(i), Integer.parseInt(quant.getText().toString()));
+                Log.i("TAG", quant.getText().toString());
                 Toast toast = Toast.makeText(c, "Produto adicionado!", Toast.LENGTH_SHORT);
                 //toast.setGravity(Gravity.TOP, 0, 125);
                 toast.show();
             }
         });
+
+
+
         ((MyHolder)myHolder).favView.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
