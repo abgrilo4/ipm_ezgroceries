@@ -20,11 +20,14 @@
         android:roundIcon="@drawable/ezgroceries"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".addLista"></activity>
+        <activity android:name=".addLista"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".FinalScreenActivity"
-            android:parentActivityName=".ui.Produtos.TodosScreen" />
-        <activity android:name=".CheckCart" />
+            android:parentActivityName=".ui.Produtos.TodosScreen"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".CheckCart"
+            android:screenOrientation="portrait"/>
 
         <uses-library
             android:name="org.apache.http.legacy"
@@ -32,22 +35,28 @@
 
         <activity
             android:name=".ui.Produtos.LaticiniosScreen"
-            android:parentActivityName=".MainMenu" />
+            android:parentActivityName=".MainMenu"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.Produtos.PadariaScreen"
-            android:parentActivityName=".MainMenu" />
+            android:parentActivityName=".MainMenu"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.Produtos.BebidasScreen"
-            android:parentActivityName=".MainMenu" />
+            android:parentActivityName=".MainMenu"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.Produtos.MerceariaScreen"
-            android:parentActivityName=".MainMenu" />
+            android:parentActivityName=".MainMenu"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.Produtos.FrescosScreen"
-            android:parentActivityName=".MainMenu" />
+            android:parentActivityName=".MainMenu"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.Produtos.TodosScreen"
-            android:parentActivityName=".MainMenu" />
+            android:parentActivityName=".MainMenu"
+            android:screenOrientation="portrait"/>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -62,7 +71,8 @@
 
         <activity
             android:name=".LocationScreen"
-            android:label="@string/title_activity_location_screen">
+            android:label="@string/title_activity_location_screen"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.ezgroceries.MainMenu" />
@@ -71,7 +81,8 @@
             android:name=".MainMenu"
             android:label="@string/title_activity_main_menu"
             android:parentActivityName=".ui.login.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.ezgroceries.ui.login.LoginActivity" />
@@ -79,12 +90,14 @@
         <activity
             android:name=".ui.login.LoginActivity"
             android:label="@string/title_activity_login"
-            android:parentActivityName=".HomeScreen">
+            android:parentActivityName=".HomeScreen"
+            android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.ezgroceries.HomeScreen" />
         </activity>
-        <activity android:name=".HomeScreen">
+        <activity android:name=".HomeScreen"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

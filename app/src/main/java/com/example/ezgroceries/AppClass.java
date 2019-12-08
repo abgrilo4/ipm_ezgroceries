@@ -75,6 +75,18 @@ public class AppClass  extends Application {
         return  favoritos;
     }
 
+    public ArrayList<Produto> remProdutoFavoritos(String produto){
+        for (int i = 0; i < favoritos.size(); i++) {
+            Produto p = favoritos.get(i);
+            if (p.nome() == produto) {
+                favoritos.remove(p);
+                break;
+            }
+
+        }
+        return  favoritos;
+    }
+
     public ArrayList<Produto> addProdutoCarrinho(Produto produto){
         Produto p = allReadyInChart(produto);
 

@@ -63,7 +63,9 @@ public class GalleryFragment extends Fragment {
                 int count = listView.getCount();
                 for (int item = count-1; item>=0; item--){
                     if(positionChecker.get(item)){
+                        ((AppClass)getActivity().getApplication()).remProdutoFavoritos((String)listaFavoritos.get(item));
                         adapter.remove(listaFavoritos.get(item));
+
                     }
                 }
             }
